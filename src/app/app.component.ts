@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Minion } from './commons/classes/minion.class';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public title: string = 'ANGRULAR!';
   public totalMinions: number = 20;
-  private minion: any = {
-    name: <string> 'Bob',
-    numberOfEyes: <number> 1,
-    isFriendly: <boolean> true
-  };
+  private minion: Minion = new Minion('Bob', 1, true);
+
+  constructor() { }
+
 }
