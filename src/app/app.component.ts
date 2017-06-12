@@ -8,8 +8,12 @@ import { Minion } from './commons/classes/minion.class';
 })
 export class AppComponent {
   public title: string = 'ANGRULAR!';
-  public totalMinions: number = 20;
-  private minion: Minion = new Minion('Bob', 1, true);
+  private totalMinions: number = 3;
+  private minions = [
+    new Minion(0, 'Bob', 1, true),
+    new Minion(1, 'Stuart', 2, true),
+    new Minion(2, 'Kevin', 2, true)
+  ];
 
   constructor() { }
 

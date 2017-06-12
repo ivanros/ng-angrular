@@ -1,7 +1,24 @@
-<h1>
-  {{ title }}
-</h1>
-<div>Total minions: {{ totalMinions }}</div>
-<div>Minion's name: {{ minion.name }}</div>
-<div>Minion's eyes: {{ minion.numberOfEyes }}</div>
-<div>Minion is friendly?: {{ minion.isFriendly }}</div>
+<div class="content">
+
+  <h1>
+    {{ title }}
+  </h1>
+  <div *ngIf="totalMinions > 0">
+    Total minions: {{ totalMinions }}
+  </div>
+  <div *ngFor="let minion of minions">
+    <div>
+      Minion's name: {{ minion.name }}
+    </div>
+    <div [hidden]="minion.numberOfEyes === 0">
+      Minion's eyes: {{ minion.numberOfEyes }}
+    </div>
+    <div>
+      Minion is friendly?:
+      <span [ngClass]="{ 'color-green': minion.isFriendly,  'color-red': !minion.isFriendly }">
+        {{ minion.isFriendly }}
+      </span>
+    </div>
+  </div>
+
+</div>
