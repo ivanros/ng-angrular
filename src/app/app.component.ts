@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  public title: string = 'ANGRULAR!';
+  public totalMinions: number = 20;
+  private minion: any = {
+    name: <string> 'Bob',
+    numberOfEyes: <number> 1,
+    isFriendly: <boolean> true
+  };
 }
