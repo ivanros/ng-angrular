@@ -3,21 +3,27 @@
   <h1>
     {{ title }}
   </h1>
-  <div *ngIf="totalMinions > 0">
-    Total minions: {{ totalMinions }}
+
+  <div class="row" *ngIf="minions.length > 0">
+    Total minions: <b>{{ minions.length }}</b>
   </div>
-  <div *ngFor="let minion of minions">
-    <div>
-      Minion's name: {{ minion.name }}
-    </div>
-    <div [hidden]="minion.numberOfEyes === 0">
-      Minion's eyes: {{ minion.numberOfEyes }}
-    </div>
-    <div>
-      Minion is friendly?:
-      <span [ngClass]="{ 'color-green': minion.isFriendly,  'color-red': !minion.isFriendly }">
-        {{ minion.isFriendly }}
-      </span>
+
+  <div class="row">
+    <button (click)="addNewMinion()">Add new minion</button>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2" *ngFor="let minion of minions">
+
+      <div class="minion-panel minion-panel-default">
+        <div class="minion-photo" [ngStyle]="{ 'background-image': 'url(assets/images/' + minion.picture + ')' }">
+          <a href="/minions/{{minion.id}}" class="minion-veil"></a>
+        </div>
+        <div class="minion-header">
+          <div class="minion-header-name">{{minion.name}}</div>
+        </div>
+      </div>
+
     </div>
   </div>
 

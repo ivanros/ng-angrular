@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Minion } from './commons/classes/minion.class';
 
 @Component({
@@ -6,15 +6,29 @@ import { Minion } from './commons/classes/minion.class';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public title: string = 'ANGRULAR!';
-  private totalMinions: number = 3;
-  private minions = [
-    new Minion(0, 'Bob', 1, true),
-    new Minion(1, 'Stuart', 2, true),
-    new Minion(2, 'Kevin', 2, true)
-  ];
+
+  private minions = [];
 
   constructor() { }
+
+  ngOnInit() {
+    this.searchMinions();
+  }
+
+  searchMinions() {
+    this.minions = [
+      new Minion(1, 'Bob', 1, 'minion01.png', true),
+      new Minion(2, 'Stuart', 2, 'minion02.png', true),
+      new Minion(3, 'Kevin', 2, 'minion03.png', true)
+    ];
+  }
+
+  addNewMinion() {
+    this.minions.push(
+      new Minion(4, 'Tom', 1, 'minion04.png', true)
+    );
+  }
 
 }

@@ -7,6 +7,7 @@ export class Minion {
     public id: number,
     public name: string,
     public numberOfEyes: number,
+    public picture: string,
     public isFriendly?: boolean
   ) { }
 
