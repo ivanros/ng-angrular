@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Minion } from './commons/classes/minion.class';
+import { MinionsListService } from './minions-list/services/minions-list.service';
 
 @Component({
   selector: 'app-root',
@@ -7,28 +8,39 @@ import { Minion } from './commons/classes/minion.class';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public title: string = 'ANGRULAR!';
+  public title: string = 'ANGRULAR';
 
-  private minions = [];
+  private isLoading = false;
+  private minions;
+  private minionsData = {
+    count: 0
+  };
+  private minionFilters = {
+    name: '',
+    gender: undefined,
+    numberOfEyes: undefined,
+    isFriendly: true
+  };
 
-  constructor() { }
+  constructor(private minionsListService: MinionsListService) { }
 
   ngOnInit() {
     this.searchMinions();
   }
 
   searchMinions() {
-    this.minions = [
-      new Minion(1, 'Bob', 1, 'minion01.png', true),
-      new Minion(2, 'Stuart', 2, 'minion02.png', true),
-      new Minion(3, 'Kevin', 2, 'minion03.png', true)
-    ];
+    this.isLoading = true;
+    this.minionsListService.getMinions()
+      .subscribe(data => {
+        this.minionsData.count = data.totalElements;
+        this.minions = data.elements;
+        this.isLoading = false;
+      });
   }
 
   addNewMinion() {
-    this.minions.push(
-      new Minion(4, 'Tom', 1, 'minion04.png', true)
-    );
+    this.minions = this.minionsListService.addMinion(this.minions, this.minionFilters);
+    this.minionsData.count += 1;
   }
 
 }
