@@ -1,0 +1,6 @@
+<div class="content-alert bg-warning" *ngIf="data.length">
+  <i class="fa fa-bell"></i>
+  <p><b>These minions</b> have been added to the list, do you want to persist the data ?</p>
+  <span><b>{{ data }}</b></span>
+  <button type="button" class="btn btn-warning pull-right" (click)="persist()">Persist</button>
+</div>
