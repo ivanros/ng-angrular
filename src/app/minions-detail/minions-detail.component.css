@@ -1,3 +1,15 @@
 .minion-profile {
   margin: 2em;
 }
+
+.minion-info h3 {
+  margin: 2em;
+}
+
+.minion-info .minion-detail {
+  font-size: 16px;
+}
+
+.minion-detail .col-md-3 {
+  margin-top: 2em;
+}

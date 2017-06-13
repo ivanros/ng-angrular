@@ -1,20 +1,42 @@
-<div>
-  <h3>Minion #{{minionId}}: <b>{{ minionData.name }}</b></h3>
+<div class="minion-info" *ngIf="!isLoading && minionData">
+  <h3>Minion #{{ minionData.id }}: <b>{{ minionData.name }}</b></h3>
 
-  <div class="minion-profile col-md-3">
+  <div class="minion-profile col-md-2">
     <img src="{{ './assets/images/' + minionData.picture }}">
   </div>
 
-  <div class="col-md-8">
-    <div><b>Gender</b>: {{ minionData.gender }}</div>
-    <div><b>Number of eyes</b>: {{ minionData.numberOfEyes }}</div>
-    <div><b>Is friendly ?</b>: {{ minionData.isFriendly }}</div>
-    <div><b>Status</b>: {{ minionData.status }}</div>
-    <div><b>Skills</b>: {{ minionData.skills }}</div>
-    <div><b>Vocabulary</b>: {{ minionData.vocabulary }}</div>
+  <div class="minion-detail">
+    <div class="col-md-3">
+      <div><b>Gender</b>: {{ minionData.gender }}</div>
+      <div><b>Number of eyes</b>: {{ minionData.numberOfEyes }}</div>
+      <div><b>Is friendly ?</b>:
+        <span [ngClass]="{ 'color-green': minionData.isFriendly, 'color-red': !minionData.isFriendly }">
+          {{ minionData.isFriendly }}
+        </span>
+      </div>
+      <div><b>Status</b>: {{ minionData.status }}</div>
+    </div>
+    <div class="col-md-3">
+      <div><b>Skills</b>:
+        <ul>
+          <li *ngFor="let skill of minionData.skills">{{ skill }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div><b>Vocabulary</b>:
+        <ul>
+          <li *ngFor="let sentence of minionData.vocabulary">{{ sentence }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <i class="logo">
     <img src="./assets/images/gru-logo.ico">
   </i>
 </div>
+
+<i class="logo loading-content" *ngIf="isLoading">
+  <img src="./assets/images/gru-logo.ico">
+</i>

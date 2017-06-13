@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MinionsListService } from '../minions-list/services/minions-list.service';
 
 @Component({
   selector: 'app-minions-detail',
@@ -8,23 +9,37 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MinionsDetailComponent implements OnInit {
 
-  private minionId;
-  private minionData = {
-    id: 11,
-    name: 'Jon',
-    gender: 'Male',
-    numberOfEyes: 1,
-    picture: 'minion11.png',
-    isFriendly: true,
-    status: 'Sleeping',
-    skills: ['Destroy things', 'Shout'],
-    vocabulary: ['Bello!', 'Ha ha ha! Banana!', 'Poopaye!', 'Para tu']
-  };
+  private isLoading = false;
+  private minionData = { };
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private minionsListService: MinionsListService) { }
 
   ngOnInit() {
-    this.minionId = this.route.snapshot.params['employeeId'];
+    this.minionData = this.minionsListService.getCurrentMinion();
+
+    if (!this.minionData) {
+      this.getMinionsAndReassign();
+    }
+  }
+
+  getMinionsAndReassign() {
+    const minionId = +this.route.snapshot.params['employeeId'];
+    this.isLoading = true;
+
+    this.minionsListService.getMinions()
+      .subscribe(data => {
+        this.minionsListService.setCurrentMinion(data.elements);
+
+        data.elements.forEach(minion => {
+          if (minionId === minion.id) {
+            this.minionData = minion;
+            return false;
+          }
+        });
+
+        this.isLoading = false;
+      });
   }
 
 }

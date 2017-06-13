@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Minion } from '../commons/classes/minion.class';
-import { MinionsListService } from "./services/minions-list.service";
+import { Router } from '@angular/router';
+import { MinionsListService } from './services/minions-list.service';
 
 @Component({
   selector: 'app-minions-list',
@@ -21,7 +21,8 @@ export class MinionsListComponent implements OnInit {
     isFriendly: true
   };
 
-  constructor(private minionsListService: MinionsListService) { }
+  constructor(private parentRoute: Router,
+              private minionsListService: MinionsListService) { }
 
   ngOnInit() {
     this.searchMinions();
@@ -40,6 +41,11 @@ export class MinionsListComponent implements OnInit {
   addNewMinion() {
     this.minions = this.minionsListService.addMinion(this.minions, this.minionFilters);
     this.minionsData.count += 1;
+  }
+
+  goToMinionDetail(minion) {
+    this.minionsListService.setCurrentMinion(minion);
+    this.parentRoute.navigate(['/employees/' + minion.id]);
   }
 
 }

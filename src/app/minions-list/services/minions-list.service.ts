@@ -8,6 +8,8 @@ import 'rxjs/add/operator/delay';
 @Injectable()
 export class MinionsListService {
 
+  private currentMinion;
+
   constructor(private http: Http) { }
 
   /**
@@ -25,7 +27,7 @@ export class MinionsListService {
    * @param newMinion
    * @returns {Array}
    */
-  addMinion(minions, newMinion) {
+  addMinion(minions: any[], newMinion: any): any[] {
     minions.push(
       new Minion(
         newMinion.id,
@@ -37,6 +39,14 @@ export class MinionsListService {
       )
     );
     return minions;
+  }
+
+  getCurrentMinion() {
+    return this.currentMinion;
+  }
+
+  setCurrentMinion(minion: Minion) {
+    this.currentMinion = minion;
   }
 
 }

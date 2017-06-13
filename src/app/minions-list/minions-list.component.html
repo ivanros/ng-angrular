@@ -35,7 +35,7 @@
     <div class="minion-panel minion-panel-default">
       <div [hidden]="!minion.picture" class="minion-photo"
            [ngStyle]="{ 'background-image': 'url(assets/images/' + minion.picture + ')' }">
-        <a [routerLink]="['/employees/' + minion.id]" class="minion-veil"></a>
+        <a (click)="goToMinionDetail(minion)" class="minion-veil"></a>
       </div>
       <div class="minion-header">
         <div class="minion-header-name">{{minion.name}}</div>
