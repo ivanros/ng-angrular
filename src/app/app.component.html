@@ -1,63 +1,15 @@
 <header>
-  <h2>
-    {{ title }}
-  </h2>
+  <h2 class="col-md-5 header-title" title="Go to Home" [routerLink]="'/'">{{ title }}</h2>
+  <ul class="menu-items col-md-6">
+    <li routerLink="contact" routerLinkActive="active">Contact</li>
+    <li routerLink="employees" routerLinkActive="active">Employees</li>
+  </ul>
 </header>
 
 <div class="content">
-
   <div class="container">
 
-  <div class="row">
-    <div class="search-filters col-md-8">
-      <input type="text" class="form-control" placeholder="Name" [(ngModel)]="minionFilters.name">
-      <select class="form-control" [(ngModel)]="minionFilters.gender">
-        <option [ngValue]="undefined" selected>All genders</option>
-        <option [ngValue]="'Male'">Male</option>
-        <option [ngValue]="'Female'">Female</option>
-      </select>
-      <select class="form-control" [(ngModel)]="minionFilters.numberOfEyes">
-        <option [ngValue]="undefined" selected>All number of eyes</option>
-        <option [ngValue]="1">One</option>
-        <option [ngValue]="2">Two</option>
-        <option [ngValue]="3">Three</option>
-      </select>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" [(ngModel)]="minionFilters.isFriendly">
-          Friendly?
-        </label>
-      </div>
-    </div>
-
-    <div class="search-buttons col-md-4">
-      <button type="button" class="btn btn-primary pull-right" (click)="addNewMinion()">Add new minion</button>
-    </div>
-  </div>
-
-  <div class="row">
-    Total minions: <b>{{ minionsData.count }}</b>
-  </div>
-
-  <div class="row" *ngIf="!isLoading">
-    <div class="col-md-2" *ngFor="let minion of minions | searchFilters:minionFilters:minionsData">
-
-      <div class="minion-panel minion-panel-default">
-        <div [hidden]="!minion.picture" class="minion-photo"
-             [ngStyle]="{ 'background-image': 'url(assets/images/' + minion.picture + ')' }">
-          <a href="/minions/{{minion.id}}" class="minion-veil"></a>
-        </div>
-        <div class="minion-header">
-          <div class="minion-header-name">{{minion.name}}</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <i class="loading-content" *ngIf="isLoading">
-    <img src="./assets/images/gru-logo.ico">
-  </i>
+    <router-outlet></router-outlet>
 
   </div>
 </div>

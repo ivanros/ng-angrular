@@ -1,0 +1,20 @@
+<div>
+  <h3>Minion #{{minionId}}: <b>{{ minionData.name }}</b></h3>
+
+  <div class="minion-profile col-md-3">
+    <img src="{{ './assets/images/' + minionData.picture }}">
+  </div>
+
+  <div class="col-md-8">
+    <div><b>Gender</b>: {{ minionData.gender }}</div>
+    <div><b>Number of eyes</b>: {{ minionData.numberOfEyes }}</div>
+    <div><b>Is friendly ?</b>: {{ minionData.isFriendly }}</div>
+    <div><b>Status</b>: {{ minionData.status }}</div>
+    <div><b>Skills</b>: {{ minionData.skills }}</div>
+    <div><b>Vocabulary</b>: {{ minionData.vocabulary }}</div>
+  </div>
+
+  <i class="logo">
+    <img src="./assets/images/gru-logo.ico">
+  </i>
+</div>
