@@ -1,0 +1,15 @@
+.contact-form {
+  padding: 2em;
+  background-color: lavender;
+}
+
+.contact-form input {
+  width: 400px;
+}
+
+.contact-form textarea {
+  width: 550px;
+  height: 100px;
+  max-width: 550px;
+  max-height: 200px;
+}

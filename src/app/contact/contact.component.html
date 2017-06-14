@@ -1,28 +1,66 @@
 <div>
-  <h3>Contact page !</h3>
-
   <div class="col-md-8">
-    <div><b>Factory</b>: Supervillain factory S.A.</div>
-    <div><b>Leader</b>: Gru</div>
-    <div><b>Occupation</b>:
-      <ul>
-        <li>Supervillain (formerly)</li>
-        <li>Jelly manufacturer (formerly)</li>
-        <li>Anti-Villain League correspondent (currently)</li>
-      </ul>
-    </div>
-    <div><b>Enemies</b>:
-      <ul>
-        <li>Vector</li>
-        <li>El Macho</li>
-        <li>Scarlet Overkill</li>
-        <li>Balthazar Bratt</li>
-      </ul>
-    </div>
-    <div><b>Contact us</b>:</div>
+    <p><b>Factory</b>: Supervillain factory S.A.</p>
+    <p><b>Leader</b>: Gru</p>
+    <p><b>Occupation</b>:</p>
+    <ul>
+      <li>Supervillain (formerly)</li>
+      <li>Jelly manufacturer (formerly)</li>
+      <li>Anti-Villain League correspondent (currently)</li>
+    </ul>
+    <p><b>Enemies</b>:</p>
+    <ul>
+      <li>Vector</li>
+      <li>El Macho</li>
+      <li>Scarlet Overkill</li>
+      <li>Balthazar Bratt</li>
+    </ul>
+    <p><b>Contact us</b>:</p>
 
-    <div>
-      <!-- FORM -->
+    <div class="contact-form" [hidden]="isSubmitted">
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group"
+             [ngClass]="{ 'has-error': !name.valid, 'has-success': name.valid }">
+
+          <label *ngIf="!name.valid" class="control-label" for="name">Name is required</label>
+          <input type="text" class="form-control" id="name" placeholder="Name"
+                 [(ngModel)]="contactForm.name" name="name" #name="ngModel" required>
+        </div>
+
+        <div class="form-group"
+             [ngClass]="{ 'has-error': !email.valid || phone.errors, 'has-success': email.valid && !phone.errors }">
+
+          <label *ngIf="email.errors && email.errors.pattern" class="control-label" for="email">Email is invalid</label>
+          <input type="email" class="form-control" id="email" placeholder="Email"
+                 [(ngModel)]="contactForm.email" name="email" #email="ngModel"
+                 pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+        </div>
+
+        <div class="form-group"
+             [ngClass]="{ 'has-error': !phone.valid || phone.errors, 'has-success': phone.valid && !phone.errors }">
+
+          <label *ngIf="phone.errors && phone.errors.pattern" class="control-label" for="phone">Phone has to be 9 digits long</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Phone"
+                 pattern="^\d{9}$"
+                 [(ngModel)]="contactForm.phone" name="phone" #phone="ngModel">
+        </div>
+
+        <div class="form-group"
+             [ngClass]="{ 'has-error': !message.valid, 'has-success': message.valid }">
+
+          <label *ngIf="!message.valid" class="control-label" for="message">Message is required</label>
+          <textarea class="form-control" id="message" placeholder="Message us"
+                    [(ngModel)]="contactForm.message" name="message" #message="ngModel" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="!contactForm.form.valid">Submit</button>
+
+      </form>
+    </div>
+
+    <div class="content-alert bg-info" [hidden]="!isSubmitted">
+      Submitted successfully !
     </div>
 
   </div>

@@ -29,6 +29,10 @@ i.logo img {
   margin: 6em 45%;
 }
 
+.content-alert {
+  padding: 2em;
+}
+
 @keyframes flickerAnimation {
   0%   { opacity:1; }
   50%  { opacity:0; }
