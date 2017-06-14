@@ -7,13 +7,15 @@ module.exports = function (config) {
     frameworks: ['jasmine', 'angular-cli'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-chrome-launcher'),
+      require('karma-phantomjs2-launcher'),
       require('karma-remap-istanbul'),
       require('angular-cli/plugins/karma')
     ],
     files: [
-      { pattern: './src/test.ts', watched: false }
+      { pattern: './src/test.ts', watched: false },
+      { pattern: './src/**/*.spec.ts', included: false, served: true, watched: false }
     ],
+    exclude: [],
     preprocessors: {
       './src/test.ts': ['angular-cli']
     },
@@ -31,13 +33,14 @@ module.exports = function (config) {
       environment: 'dev'
     },
     reporters: config.angularCli && config.angularCli.codeCoverage
-              ? ['progress', 'karma-remap-istanbul']
-              : ['progress'],
+      ? ['progress', 'karma-remap-istanbul']
+      : ['progress'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false
+    browsers: ['PhantomJS2'],
+    phantomjsLauncher: {
+      exitOnResourceError: true
+    }
   });
 };

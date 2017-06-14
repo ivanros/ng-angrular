@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { MinionsDetailComponent } from './minions-detail.component';
 
-describe('MinionsDetailComponent', () => {
+xdescribe('MinionsDetailComponent', () => {
   let component: MinionsDetailComponent;
   let fixture: ComponentFixture<MinionsDetailComponent>;
 

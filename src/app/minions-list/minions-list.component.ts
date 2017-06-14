@@ -9,12 +9,12 @@ import { MinionsListService } from './services/minions-list.service';
 })
 export class MinionsListComponent implements OnInit {
 
-  private isLoading = false;
-  private minions;
-  private minionsData = {
+  public minions;
+  public isLoading = false;
+  public minionsData = {
     count: 0
   };
-  private minionFilters = {
+  public minionFilters = {
     name: '',
     gender: undefined,
     numberOfEyes: undefined,
