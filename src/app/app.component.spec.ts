@@ -16,9 +16,7 @@ describe('AppComponent', () => {
       ],
       imports: [
         RouterTestingModule.withRoutes([
-          { path: '', component: DummyComponent },
-          { path: 'employees', component: DummyComponent },
-          { path: 'employees/:employeeId', component: DummyComponent }
+          { path: '', component: DummyComponent }
         ])
       ]
     });

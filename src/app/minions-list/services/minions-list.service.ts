@@ -28,16 +28,7 @@ export class MinionsListService {
    * @returns {Array}
    */
   addMinion(minions: any[], newMinion: any): any[] {
-    minions.push(
-      new Minion(
-        newMinion.id,
-        newMinion.name ? newMinion.name : 'Rob',
-        newMinion.gender ? newMinion.gender : 'Male',
-        newMinion.numberOfEyes ? newMinion.numberOfEyes : 2,
-        'minion-empty.png',
-        newMinion.isFriendly
-      )
-    );
+    minions.push(newMinion);
     return minions;
   }
 

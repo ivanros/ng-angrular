@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MinionsListService } from './services/minions-list.service';
+import { Minion } from '../commons/classes/minion.class';
 
 @Component({
   selector: 'app-minions-list',
@@ -11,6 +12,7 @@ export class MinionsListComponent implements OnInit {
 
   public minions;
   public isLoading = false;
+  private newMinions = [];
   public minionsData = {
     count: 0
   };
@@ -20,6 +22,7 @@ export class MinionsListComponent implements OnInit {
     numberOfEyes: undefined,
     isFriendly: true
   };
+  private successMessage;
 
   constructor(private parentRoute: Router,
               private minionsListService: MinionsListService) { }
@@ -39,13 +42,26 @@ export class MinionsListComponent implements OnInit {
   }
 
   addNewMinion() {
-    this.minions = this.minionsListService.addMinion(this.minions, this.minionFilters);
+    const newMinion = new Minion(
+      this.minions.length + 1,
+      this.minionFilters.name ? this.minionFilters.name : 'Rob',
+      this.minionFilters.gender ? this.minionFilters.gender : 'Male',
+      this.minionFilters.numberOfEyes ? this.minionFilters.numberOfEyes : 2,
+      'minion-empty.png',
+      this.minionFilters.isFriendly
+    );
+    this.minions = this.minionsListService.addMinion(this.minions, newMinion);
+    this.newMinions.push(newMinion.name);
     this.minionsData.count += 1;
   }
 
   goToMinionDetail(minion) {
     this.minionsListService.setCurrentMinion(minion);
     this.parentRoute.navigate(['/employees/' + minion.id]);
+  }
+
+  triggerUpdate(data) {
+    this.successMessage = data.message;
   }
 
 }

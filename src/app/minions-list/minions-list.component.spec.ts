@@ -10,6 +10,7 @@ import { SearchFiltersPipe } from '../commons/pipes/search-filters.pipe';
 
 import { MinionsListService } from './services/minions-list.service';
 import createSpy = jasmine.createSpy;
+import { ContentAlertsComponent } from '../commons/components/content-alerts/content-alerts.component';
 
 describe('MinionsListComponent', () => {
   let component: MinionsListComponent;
@@ -47,6 +48,7 @@ describe('MinionsListComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         MinionsListComponent,
+        ContentAlertsComponent,
         SearchFiltersPipe
       ],
       imports: [

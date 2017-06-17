@@ -66,7 +66,6 @@ describe('MinionsListService', () => {
 
       expect(result.length).toEqual(3);
       expect(result[ result.length - 1 ].name).toEqual(newMinion.name);
-      expect(result[ result.length - 1 ].gender).toEqual('Male');
     }));
 
 
