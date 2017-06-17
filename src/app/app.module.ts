@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { MinionsListComponent } from './minions-list/minions-list.component';
 import { MinionsDetailComponent } from './minions-detail/minions-detail.component';
 import { ContactComponent } from './contact/contact.component';
+import { ContentAlertsComponent } from './commons/components/content-alerts/content-alerts.component';
 
 import { SearchFiltersPipe } from './commons/pipes/search-filters.pipe';
 
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     MinionsListComponent,
     SearchFiltersPipe,
     ContactComponent,
-    MinionsDetailComponent
+    MinionsDetailComponent,
+    ContentAlertsComponent
   ],
   imports: [
     BrowserModule,

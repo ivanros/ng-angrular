@@ -21,7 +21,8 @@
   </div>
 
   <div class="search-buttons col-md-4">
-    <button type="button" class="btn btn-primary pull-right" (click)="addNewMinion()">Add new minion</button>
+    <button type="button" class="btn btn-primary pull-right"
+            (click)="addNewMinion()" [disabled]="!minions">Add new minion</button>
   </div>
 </div>
 
@@ -43,6 +44,16 @@
     </div>
 
   </div>
+</div>
+
+<app-content-alerts
+  [data]="newMinions"
+  (updatePersist)="triggerUpdate($event)"
+></app-content-alerts>
+
+<div class="content-alert bg-success" *ngIf="successMessage">
+  <i class="fa fa-check"></i>
+  <p><b>{{ successMessage }}</b></p>
 </div>
 
 <i class="logo loading-content" *ngIf="isLoading">
