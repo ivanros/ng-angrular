@@ -1,0 +1,204 @@
+{
+  "totalElements": 20,
+  "elements": [{
+    "id": 1,
+    "name": "Bob",
+    "gender": "Male",
+    "numberOfEyes": 2,
+    "picture": "minion01.png",
+    "isFriendly": true,
+    "status": "Working",
+    "skills": ["Clean", "Eat icecreams", "Children care"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Me want banana!", "Poopaye!", "Gelato"]
+  }, {
+    "id": 2,
+    "name": "Dave",
+    "gender": "Male",
+    "numberOfEyes": 2,
+    "picture": "minion02.png",
+    "isFriendly": true,
+    "status": "Sleeping",
+    "skills": ["Clean", "Eat bananas", "Guinea pig", "Cook"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "BEE DO BEE DO BEE DO!"]
+  }, {
+    "id": 3,
+    "name": "Stuart",
+    "gender": "Male",
+    "numberOfEyes": 1,
+    "picture": "minion03.png",
+    "isFriendly": true,
+    "status": "Eating",
+    "skills": ["Build a sand castle", "Read books"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Bananonina!", "Para tu", "Tatata bala tu"]
+  }, {
+    "id": 4,
+    "name": "Jerry",
+    "gender": "Male",
+    "numberOfEyes": 2,
+    "picture": "minion04.png",
+    "isFriendly": true,
+    "status": "Eating",
+    "skills": ["Eat bananas", "Children care", "Make jokes"],
+    "vocabulary": ["Bello!", "Poopaye!", "Para tu", "Tatata bala tu", "Me want banana!"]
+  }, {
+    "id": 5,
+    "name": "Jorge",
+    "gender": "Male",
+    "numberOfEyes": 1,
+    "picture": "minion05.png",
+    "isFriendly": true,
+    "status": "Working",
+    "skills": ["Clean", "Eat bananas", "Guinea pig", "Children care", "Cook"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Para tu", "Me want banana!"]
+  }, {
+    "id": 6,
+    "name": "Tim",
+    "gender": "Male",
+    "numberOfEyes": 2,
+    "picture": "minion06.png",
+    "isFriendly": true,
+    "status": "Having fun",
+    "skills": ["Guinea pig", "Destroy things", "Make jokes", "Be bad"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "Tatata bala tu", "Para tu"]
+  }, {
+    "id": 7,
+    "name": "Mark",
+    "gender": "Male",
+    "numberOfEyes": 2,
+    "picture": "minion07.png",
+    "isFriendly": true,
+    "status": "Sleeping",
+    "skills": ["Destroy things", "Be bad", "Dance with coconuts"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "Para tu", "BEE DO BEE DO BEE DO!"]
+  }, {
+    "id": 8,
+    "name": "Phil",
+    "gender": "Male",
+    "numberOfEyes": 1,
+    "picture": "minion08.png",
+    "isFriendly": true,
+    "status": "Sleeping",
+    "skills": ["Destroy things", "Be bad", "Swim on the beach"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "Para tu", "Gelato"]
+  }, {
+    "id": 9,
+    "name": "Sophia",
+    "gender": "Female",
+    "numberOfEyes": 2,
+    "picture": "minion09.png",
+    "isFriendly": true,
+    "status": "Sleeping",
+    "skills": ["Destroy things", "Be bad", "Swim on the beach"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "Para tu", "BEE DO BEE DO BEE DO!"]
+  }, {
+    "id": 10,
+    "name": "Bob",
+    "gender": "Male",
+    "numberOfEyes": 1,
+    "picture": "minion10.png",
+    "isFriendly": true,
+    "status": "Having fun",
+    "skills": ["Destroy things", "Be bad", "Swim on the beach"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "Para tu"]
+  }, {
+    "id": 11,
+    "name": "Jon",
+    "gender": "Male",
+    "numberOfEyes": 1,
+    "picture": "minion11.png",
+    "isFriendly": true,
+    "status": "Sleeping",
+    "skills": ["Destroy things", "Shout"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "Para tu"]
+  }, {
+    "id": 12,
+    "name": "Tom",
+    "gender": "Male",
+    "numberOfEyes": 1,
+    "picture": "minion12.png",
+    "isFriendly": true,
+    "status": "Having fun",
+    "skills": ["Destroy things", "Be bad", "Scream loud", "Swim on the beach"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "BEE DO BEE DO BEE DO!"]
+  }, {
+    "id": 13,
+    "name": "Anton",
+    "gender": "Male",
+    "numberOfEyes": 1,
+    "picture": "minion13.png",
+    "isFriendly": true,
+    "status": "Working",
+    "skills": ["Destroy things", "Children care", "Cook"],
+    "vocabulary": ["Bello!", "Poopaye!", "Para tu", "Me want banana!"]
+  }, {
+    "id": 14,
+    "name": "Evil Kevin",
+    "gender": "Male",
+    "numberOfEyes": 2,
+    "picture": "minion14.png",
+    "isFriendly": false,
+    "status": "Sleeping",
+    "skills": ["Destroy things", "Be bad", "Scream loud"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "Para tu", "Me want banana!"]
+  }, {
+    "id": 15,
+    "name": "Addams",
+    "gender": "Male",
+    "numberOfEyes": 2,
+    "picture": "minion15.png",
+    "isFriendly": true,
+    "status": "Working",
+    "skills": ["Destroy things", "Cook", "Karate"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "Para tu", "BEE DO BEE DO BEE DO!"]
+  }, {
+    "id": 16,
+    "name": "Karl",
+    "gender": "Male",
+    "numberOfEyes": 2,
+    "picture": "minion16.png",
+    "isFriendly": true,
+    "status": "Sleeping",
+    "skills": ["Destroy things", "Make jokes"],
+    "vocabulary": ["Bello!", "Ha ha ha! Banana!", "Poopaye!", "Para tu"]
+  }, {
+    "id": 17,
+    "name": "Betty",
+    "gender": "Female",
+    "numberOfEyes": 1,
+    "picture": "minion17.png",
+    "isFriendly": true,
+    "status": "Sleeping",
+    "skills": ["Destroy things", "Make jokes"],
+    "vocabulary": ["Bello!", "Poopaye!", "Para tu", "BEE DO BEE DO BEE DO!"]
+  }, {
+    "id": 18,
+    "name": "Lansom",
+    "gender": "Male",
+    "numberOfEyes": 2,
+    "picture": "minion18.png",
+    "isFriendly": true,
+    "status": "Working",
+    "skills": ["Destroy things", "Children care"],
+    "vocabulary": ["Bello!", "Poopaye!", "Para tu", "Gelato"]
+  }, {
+    "id": 19,
+    "name": "Evil Clark",
+    "gender": "Male",
+    "numberOfEyes": 2,
+    "picture": "minion19.png",
+    "isFriendly": false,
+    "status": "Eating",
+    "skills": ["Destroy things", "Guinea pig"],
+    "vocabulary": ["Whoaaaaaah!"]
+  }, {
+    "id": 20,
+    "name": "Evil Perkins",
+    "gender": "Male",
+    "numberOfEyes": 1,
+    "picture": "minion20.png",
+    "isFriendly": false,
+    "status": "Sleeping",
+    "skills": ["Destroy things"],
+    "vocabulary": ["Whoaaaaaah!"]
+  }]
+}

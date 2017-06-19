@@ -4,15 +4,15 @@
     {{ title }}
   </h1>
 
-  <div class="row" *ngIf="minions.length > 0">
-    Total minions: <b>{{ minions.length }}</b>
+  <div class="row" *ngIf="totalMinions > 0">
+    Total minions: <b>{{ totalMinions }}</b>
   </div>
 
   <div class="row">
     <button (click)="addNewMinion()">Add new minion</button>
   </div>
 
-  <div class="row">
+  <div class="row" *ngIf="!isLoading">
     <div class="col-md-2" *ngFor="let minion of minions">
 
       <div class="minion-panel minion-panel-default">
@@ -26,5 +26,9 @@
 
     </div>
   </div>
+
+  <i class="logo loading-content" *ngIf="isLoading">
+    <img src="./assets/images/gru-logo.ico">
+  </i>
 
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Minion } from './commons/classes/minion.class';
+import { MinionsListService } from './minions-list/services/minions-list.service';
 
 @Component({
   selector: 'app-root',
@@ -9,26 +10,37 @@ import { Minion } from './commons/classes/minion.class';
 export class AppComponent implements OnInit {
   public title: string = 'ANGRULAR!';
 
+  public isLoading = false;
+  private totalMinions = 0;
   private minions = [];
 
-  constructor() { }
+  constructor(private minionsListService: MinionsListService) { }
 
   ngOnInit() {
     this.searchMinions();
   }
 
   searchMinions() {
-    this.minions = [
-      new Minion(1, 'Bob', 1, 'minion01.png', true),
-      new Minion(2, 'Stuart', 2, 'minion02.png', true),
-      new Minion(3, 'Kevin', 2, 'minion03.png', true)
-    ];
+    this.isLoading = true;
+    this.minionsListService.getMinions()
+      .subscribe(data => {
+        this.totalMinions = data.totalElements;
+        this.minions = data.elements;
+        this.isLoading = false;
+      });
   }
 
   addNewMinion() {
-    this.minions.push(
-      new Minion(4, 'Tom', 1, 'minion04.png', true)
+    const newMinion = new Minion(
+      this.minions.length + 1,
+      'Rob',
+      'Male',
+      2,
+      'minion-empty.png',
+      true
     );
+    this.minions = this.minionsListService.addMinion(this.minions, newMinion);
+    this.totalMinions += 1;
   }
 
 }
